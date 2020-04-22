@@ -10,12 +10,115 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/custom.css" />
   </head>
   <body>
-    <header>
-      <div class="jumbotron">
-        <h2 class="text-center">Tesda Project</h2>
+      <div class="jumbotron text-center h2">Tesda Project
+        <div class="h5 font-italic">I've seen the future it is in my browser</div>
       </div>
-    </header>
+    <div class="container">
+      <h4>Lesson 1: HTML5 Introduction</h4>
+      <div class="container">
+        <p class="small">
+          I tried to follow the instruction to deploy "Hello World" to the web through google using python27 configured in app.yaml. Unfortunately, google updated thier policies
+          restricting the free user to deploy prior to setup of billing accounts, and asking payments method which I cannot comply at the moment.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <h4>Lesson 2: HTML5 Semantics</h4>
+      <div class="card p-2 text-center">
+        <header class="card"> Header
+        <div class="row">  
+          <nav class="mx-auto card">Navs</nav>
+        </div>
+        </header>
+        <div class="row">
+          <div class="col">
+            <section class="card h-50">Section
+              <div class="card w-25 mx-auto">Divs</div>
+              <p class="card w-25 mx-auto">Paragraph</p>
+            </section>
+            <article class="card h-50">Articles
+              <hgroup>
+                <h1 class="card w-25 mx-auto">h1</h1>
+                <h2 class="card w-25 mx-auto">h2</h2>
+                <h3 class="card w-25 mx-auto">h3</h3>
+                <h4 class="card w-25 mx-auto">h4</h4>
+                <h5 class="card w-25 mx-auto">h5</h5>
+              </hgroup>
+            </article>
+          </div>
+          <div class="col-lg-4">
+<aside class="card h-100">Aside</aside>
+          </div>
+        </div>
+        <footer class="card">Footer</footer>
+  
+        
+
+       
+      </div>
+    </div>
+    <div class="container">
+      <h4>Lesson 3: HTML5 Forms</h4>
+      <div class="container col-lg-6 ml-2">
+        <div class="d-flex">
+          <div class="my-auto h5">Search:</div>
+          <input class="form-control" type="search" placeholder="Autofocus upon load here"/>
+          <button class="btn btn-success" type="submit">Search</button>
+        </div>
+        <hr />
+        <form action="">
+          <div class="form-group">
+            <div>
+              Progress: <progress class="w-100" value="50" max="100">
+            </div>
+            Title:
+            <input class="form-control w-25" size="4" type="text" list="listname" />
+            <datalist id="listname">
+              <option label="Mr" value="Mr"> </option>
+              <option label="Mrs" value="Mrs"> </option>
+              <option label="Ms" value="Ms"> </option>
+            </datalist>
+            Name:<input class="form-control" placeholder="Enter full name" name="name" />
+            Email:
+            <input class="form-control" placeholder="Setup for autocomplete" type="email" autocomplete />
+            Telephone:<input class="form-control" placeholder="Enter tel number" type="tel" pattern="[0-9]{9}" title="Enter 9 digit-number" />
+             URL:<input
+              class="form-control"
+              placeholder="Enter required url"
+              type="url"
+              required
+            />
+            Date: <input class="form-control" type="date" /> 
+            Number: <input class="form-control" type="number" min="1" max="10" value="1" />
+            Range:<input class="form-control" type="ranger" min="1" max="10" value="5" /> 
+            Color: <input class="form-control" type="color" /> 
+            Talk:<input class="form-control" id="speech" type="text" x-webkit-speech/>
+            <script>
+              if (document.createElement("input").webkitSpeech === undefined) {
+                document.getElementById("speech").setAttribute("placeholder", "WebkitSpeech is not supported  in this browser");
+              }
+            </script>
+            <input type="submit" class="btn btn-info mt-2" value="Submit" />
+          </div>
+        </form>
+      <hr class="m-2 bg-dark">
+        <form action="">
+          Email:<input class="form-control" placeholder="e.g. juan_delacruz@example.com" type="email" id="email_add_1"/ required> 
+          Confirm Email: <input class="form-control" type="email" id="email_add_2"/ required>
+          <input id="email_add" class="btn btn-secondary" type="submit" value="Submit">
+        </form>
+        <script>
+          document.getElementById("email_add").addEventListener("click", function(event){
+            
+              if (document.getElementById("email_add_1").value != document.getElementById("email_add_2").value)
+                alert('Email address not the same');
+                event.preventDefault()
+          });
+        </script>
+      </div>
+    </div>
   </body>
 </html>
